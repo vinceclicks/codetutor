@@ -24,9 +24,11 @@ class FetchRandomUser extends Component {
         const response = await fetch(url);
         const data = await response.json();
         let merged = [];
+        //for loop that pushes every indexed item together into merged from the two object array data sets
         for (var i = 0; i < ratings.length; i++) {
             merged.push({ ...data.results[i], ...ratings[i] });
         }
+        //changes state to stop showing loading and to change the state of people to the merged data set
         this.setState({ people: merged, loading: false });
         console.log(this.state.people);
     }
@@ -39,6 +41,8 @@ class FetchRandomUser extends Component {
             return <div>Tutor data not found.</div>;
         }
         var ski = "";
+        //Each person has 1-3 Skills, this is an if statement to change how they are written depending on number
+        //the person parameter was called from the mapped jsx
         const skills = (person) => {
             if (person.codeSkill.length < 2) {
                 ski = "Skills: " + person.codeSkill;
@@ -67,6 +71,7 @@ class FetchRandomUser extends Component {
             }
         };
 
+        //Changes stars based on rating, with rating pulled from the mapped jsx
         const stars = (rating) => {
             if (rating == 1) {
                 return (
@@ -128,7 +133,7 @@ class FetchRandomUser extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    {this.state.people.map((person, index) => (
+                    {this.state.people.map((person) => (
                         <div
                             key={person.login.uuid}
                             className="mt-4 col-12 col-sm-6 col-md-4 col-lg-3"

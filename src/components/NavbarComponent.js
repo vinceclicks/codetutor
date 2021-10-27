@@ -29,6 +29,11 @@ class TopNav extends Component {
             <div>
                 <Navbar color="warning" light>
                     <NavbarBrand href="/" className="ms-5">
+                        <img
+                            src="assets/Logocheck.png"
+                            height="30"
+                            width="24"
+                        />{" "}
                         CodeTutor
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggleNav} className="me-5" />
