@@ -120,8 +120,8 @@ class FetchRandomUser extends Component {
             }
             if (
                 person.codeSkill.length === 3 &&
-                person.codeSkill != "CSS" &&
-                person.codeSkill != "SQL"
+                person.codeSkill !== "CSS" &&
+                person.codeSkill !== "SQL"
             ) {
                 ski =
                     "Skills: " +
@@ -139,7 +139,7 @@ class FetchRandomUser extends Component {
 
         //Changes stars based on rating, with rating pulled from the mapped jsx
         const stars = (rating) => {
-            if (rating == 1) {
+            if (rating === 1) {
                 return (
                     <>
                         <i className="fa fa-star"></i>
@@ -150,7 +150,7 @@ class FetchRandomUser extends Component {
                     </>
                 );
             }
-            if (rating == 2) {
+            if (rating === 2) {
                 return (
                     <>
                         <i className="fa fa-star"></i>
@@ -161,7 +161,7 @@ class FetchRandomUser extends Component {
                     </>
                 );
             }
-            if (rating == 3) {
+            if (rating === 3) {
                 return (
                     <>
                         <i className="fa fa-star"></i>
@@ -172,7 +172,7 @@ class FetchRandomUser extends Component {
                     </>
                 );
             }
-            if (rating == 4) {
+            if (rating === 4) {
                 return (
                     <>
                         <i className="fa fa-star"></i>
@@ -183,7 +183,7 @@ class FetchRandomUser extends Component {
                     </>
                 );
             }
-            if (rating == 5) {
+            if (rating === 5) {
                 return (
                     <>
                         <i className="fa fa-star"></i>
