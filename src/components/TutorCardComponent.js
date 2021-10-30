@@ -211,7 +211,11 @@ class FetchRandomUser extends Component {
                                         });
                                     }}
                                 >
-                                    <DropdownToggle caret color="primary">
+                                    <DropdownToggle
+                                        caret
+                                        outline
+                                        color="primary"
+                                    >
                                         Sort
                                     </DropdownToggle>
                                     <DropdownMenu>
@@ -249,7 +253,11 @@ class FetchRandomUser extends Component {
                                         });
                                     }}
                                 >
-                                    <DropdownToggle caret color="primary">
+                                    <DropdownToggle
+                                        caret
+                                        outline
+                                        color="primary"
+                                    >
                                         Rating
                                     </DropdownToggle>
                                     <DropdownMenu>
@@ -344,7 +352,11 @@ class FetchRandomUser extends Component {
                                         });
                                     }}
                                 >
-                                    <DropdownToggle caret color="primary">
+                                    <DropdownToggle
+                                        caret
+                                        outline
+                                        color="primary"
+                                    >
                                         Language
                                     </DropdownToggle>
                                     <DropdownMenu
@@ -558,6 +570,7 @@ class FetchRandomUser extends Component {
                                     </DropdownMenu>
                                 </ButtonDropdown>
                                 <Button
+                                    outline
                                     onClick={() => {
                                         this.setState({
                                             people: this.state.original,

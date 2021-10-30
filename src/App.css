@@ -6,3 +6,23 @@
     height: 100px;
     width: 100px;
 }
+
+.navlink {
+    position: relative;
+    left: 50px;
+}
+
+.navbar {
+    background-color: #ffcc00;
+}
+
+.navbar-toggle {
+    border: none !important;
+    outline: none !important;
+}
+
+.navbar-toggle:active,
+.navbar-toggle:focus {
+    outline: none !important;
+    border: none !important;
+}

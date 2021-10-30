@@ -7,6 +7,14 @@ import {
     Nav,
     NavItem,
     NavLink,
+    Modal,
+    ModalHeader,
+    ModalBody,
+    Form,
+    FormGroup,
+    Label,
+    Input,
+    Button,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -15,8 +23,10 @@ class TopNav extends Component {
         super(props);
         this.state = {
             isNavOpen: false,
+            isModalOpen: false,
         };
         this.toggleNav = this.toggleNav.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
     }
 
     toggleNav() {
@@ -25,10 +35,16 @@ class TopNav extends Component {
         });
     }
 
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen,
+        });
+    }
+
     render() {
         return (
             <div>
-                <Navbar color="warning" light>
+                <Navbar className="navbar" light>
                     <NavbarBrand href="/" className="ms-5">
                         <img
                             src="assets/Logocheck.png"
@@ -37,22 +53,72 @@ class TopNav extends Component {
                         />{" "}
                         CodeTutor
                     </NavbarBrand>
-                    <NavbarToggler onClick={this.toggleNav} className="me-5" />
+                    <NavbarToggler
+                        onClick={this.toggleNav}
+                        className="me-5 navbar-toggle"
+                    />
                     <Collapse isOpen={this.state.isNavOpen} navbar>
                         <Nav navbar>
-                            <NavItem>
-                                <Link to="/signup" onClick={this.toggleNav}>
+                            <NavItem className="navlink">
+                                <Link
+                                    to="/signup"
+                                    className="text-decoration-none text-dark"
+                                    onClick={this.toggleNav}
+                                >
                                     Sign Up
                                 </Link>
                             </NavItem>
-                            <NavItem>
-                                <NavLink href="https://github.com/reactstrap/reactstrap">
+                            <NavItem className="navlink">
+                                <Link
+                                    to="/home"
+                                    onClick={this.toggleModal}
+                                    className="text-dark text-decoration-none"
+                                >
                                     Login
-                                </NavLink>
+                                </Link>
                             </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>
+                <Modal
+                    isOpen={this.state.isModalOpen}
+                    toggle={this.toggleModal}
+                >
+                    <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
+                    <ModalBody>
+                        <Form onSubmit>
+                            <FormGroup>
+                                <Label htmlFor="username">Username</Label>
+                                <Input
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label htmlFor="password">Password</Label>
+                                <Input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                />
+                            </FormGroup>
+                            <FormGroup check className="my-1">
+                                <Label check>
+                                    <Input type="checkbox" name="remember" />
+                                    Remember me
+                                </Label>
+                            </FormGroup>
+                            <Button
+                                type="submit"
+                                value="submit"
+                                className="bg-primary"
+                            >
+                                Login
+                            </Button>
+                        </Form>
+                    </ModalBody>
+                </Modal>
             </div>
         );
     }

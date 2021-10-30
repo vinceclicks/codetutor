@@ -59,14 +59,13 @@ const StudentSignUp = () => {
                             <CustomInput
                                 type="checkbox"
                                 id="textalertceck"
-                                className="d-inline-block"
+                                className="d-inline-block me-2"
                                 inline
                             />
                             <Label
                                 className="d-inline-block"
                                 htmlFor="textalertcheck"
                             >
-                                {"     "}
                                 Receive Text Alerts?
                             </Label>
                         </FormGroup>
