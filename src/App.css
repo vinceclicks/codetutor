@@ -20,9 +20,3 @@
     border: none !important;
     outline: none !important;
 }
-
-.navbar-toggle:active,
-.navbar-toggle:focus {
-    outline: none !important;
-    border: none !important;
-}

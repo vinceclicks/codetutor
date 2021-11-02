@@ -22,6 +22,8 @@ import {
     DropdownItem,
 } from "reactstrap";
 import ratings from "../shared/ratings.json";
+import StarComponent from "./StarComponent";
+import SkillsComponent from "./SkillsComponent";
 
 class FetchRandomUser extends Component {
     constructor(props) {
@@ -78,8 +80,6 @@ class FetchRandomUser extends Component {
         //changes state to stop showing loading and to change the state of people to the merged data set
         this.setState({ people: merged, loading: false });
         this.setState({ original: merged.slice() });
-        console.log(this.state.people);
-        console.log(this.state.original);
     }
 
     render() {
@@ -102,99 +102,6 @@ class FetchRandomUser extends Component {
                 </div>
             );
         }
-        var ski = "";
-        //Each person has 1-3 Skills, this is an if statement to change how they are written depending on number
-        //the person parameter was called from the mapped jsx
-        const skills = (person) => {
-            if (person.codeSkill.length < 2) {
-                ski = "Skills: " + person.codeSkill;
-                return ski;
-            }
-            if (person.codeSkill.length === 2) {
-                ski =
-                    "Skills: " +
-                    person.codeSkill[0] +
-                    ", " +
-                    person.codeSkill[1];
-                return ski;
-            }
-            if (
-                person.codeSkill.length === 3 &&
-                person.codeSkill !== "CSS" &&
-                person.codeSkill !== "SQL"
-            ) {
-                ski =
-                    "Skills: " +
-                    person.codeSkill[0] +
-                    ", " +
-                    person.codeSkill[1] +
-                    ", " +
-                    person.codeSkill[2];
-                return ski;
-            } else {
-                ski = "Skills: " + person.codeSkill;
-                return ski;
-            }
-        };
-
-        //Changes stars based on rating, with rating pulled from the mapped jsx
-        const stars = (rating) => {
-            if (rating === 1) {
-                return (
-                    <>
-                        <i className="fa fa-star"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                    </>
-                );
-            }
-            if (rating === 2) {
-                return (
-                    <>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                    </>
-                );
-            }
-            if (rating === 3) {
-                return (
-                    <>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                    </>
-                );
-            }
-            if (rating === 4) {
-                return (
-                    <>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                    </>
-                );
-            }
-            if (rating === 5) {
-                return (
-                    <>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                    </>
-                );
-            }
-        };
 
         return (
             <>
@@ -603,10 +510,12 @@ class FetchRandomUser extends Component {
                                             tag="h6"
                                             className="mb-2 text-muted"
                                         >
-                                            {stars(person.rating)}{" "}
+                                            {StarComponent(person.rating)}{" "}
                                             {person.rating}({person.ratings})
                                         </CardSubtitle>
-                                        <CardText>{skills(person)}</CardText>
+                                        <CardText>
+                                            {SkillsComponent(person)}
+                                        </CardText>
                                         <Button
                                             color="primary"
                                             onClick={() => {
