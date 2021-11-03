@@ -47,7 +47,7 @@ class TopNav extends Component {
                 <Navbar className="navbar" light>
                     <NavbarBrand href="/" className="ms-5">
                         <img
-                            src="assets/Logocheck.png"
+                            src="https://github.com/vinceclicks/codetutor/blob/gh-pages/assets/Logocheck.png?raw=true"
                             height="30"
                             width="24"
                         />{" "}

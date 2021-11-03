@@ -23,7 +23,10 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="col-12 order-first order-md-last col-md-6 d-flex justify-content-center">
-                        <img src="assets/Logo.png" alt="Logo" />
+                        <img
+                            src="https://github.com/vinceclicks/codetutor/blob/gh-pages/assets/Logo.png?raw=true"
+                            alt="Logo"
+                        />
                     </div>
                 </div>
             </div>
