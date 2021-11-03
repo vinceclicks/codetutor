@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/codetutor/static/css/main.dc480741.chunk.css",
+    "main.js": "/codetutor/static/js/main.5617891b.chunk.js",
+    "main.js.map": "/codetutor/static/js/main.5617891b.chunk.js.map",
+    "runtime-main.js": "/codetutor/static/js/runtime-main.28bc8858.js",
+    "runtime-main.js.map": "/codetutor/static/js/runtime-main.28bc8858.js.map",
+    "static/css/2.b97daa31.chunk.css": "/codetutor/static/css/2.b97daa31.chunk.css",
+    "static/js/2.e82fa1a7.chunk.js": "/codetutor/static/js/2.e82fa1a7.chunk.js",
+    "static/js/2.e82fa1a7.chunk.js.map": "/codetutor/static/js/2.e82fa1a7.chunk.js.map",
+    "static/js/3.6486d2a1.chunk.js": "/codetutor/static/js/3.6486d2a1.chunk.js",
+    "static/js/3.6486d2a1.chunk.js.map": "/codetutor/static/js/3.6486d2a1.chunk.js.map",
+    "index.html": "/codetutor/index.html",
+    "static/css/2.b97daa31.chunk.css.map": "/codetutor/static/css/2.b97daa31.chunk.css.map",
+    "static/css/main.dc480741.chunk.css.map": "/codetutor/static/css/main.dc480741.chunk.css.map",
+    "static/js/2.e82fa1a7.chunk.js.LICENSE.txt": "/codetutor/static/js/2.e82fa1a7.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/codetutor/static/media/fontawesome-webfont.f691f37e.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.28bc8858.js",
+    "static/css/2.b97daa31.chunk.css",
+    "static/js/2.e82fa1a7.chunk.js",
+    "static/css/main.dc480741.chunk.css",
+    "static/js/main.5617891b.chunk.js"
+  ]
+}
